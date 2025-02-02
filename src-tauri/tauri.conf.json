@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "research-write",
+  "version": "0.1.0",
+  "identifier": "com.research-write.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "essay-app",
+        "title": "Essay App",
+        "fullscreen": true,
+        "decorations": false,
+        "url": "https://essay.app"
+      },
+      {
+        "label": "perplexity-ai",
+        "title": "Perplexity AI",
+        "fullscreen": true,
+        "decorations": false,
+        "url": "https://perplexity.ai"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' https://accounts.google.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://essay.app https://perplexity.ai https://accounts.google.com;"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
